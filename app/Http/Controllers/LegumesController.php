@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Legumes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LegumesController extends Controller
 {
@@ -14,8 +15,14 @@ class LegumesController extends Controller
      */
     public function index()
     {
-        $legumes = Legumes::all();
+        $legumes = DB::select('SELECT * FROM legumes');
         return view('pages.legumes', compact('legumes'));
+    }
+
+    public function back()
+    {
+        $legumes = DB::select('SELECT * FROM legumes');
+        return view('pages.backOffice.legumes-back', compact('legumes'));
     }
 
     /**
@@ -45,9 +52,10 @@ class LegumesController extends Controller
      * @param  \App\Models\Legumes  $legumes
      * @return \Illuminate\Http\Response
      */
-    public function show(Legumes $legumes)
+    public function show($id)
     {
-        //
+        $show = Legumes::find($id);
+        return view('backOffice.show.legumes-show', compact('show'));
     }
 
     /**

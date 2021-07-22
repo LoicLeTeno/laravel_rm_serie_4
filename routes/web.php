@@ -16,10 +16,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// WELCOME
 Route::get('/', function () {
     return view('pages.home');
 })->name('welcome');
+Route::get('/back', function () {
+    return view('pages.backOffice.home-back');
+})->name('backOffice');
 
+// FRUITS
 Route::get('/fruits', [FruitsController::class, 'index'])->name('fruits');
+Route::get('/back/fruits', [FruitsController::class, 'back'])->name('fruitsBack');
+Route::get('/back/fruits/show/{id}', [FruitsController::class, 'show'])->name('fruitsShow');
 
+// LEGUMES
 Route::get('/legumes', [LegumesController::class, 'index'])->name('legumes');
+Route::get('/back/legumes', [LegumesController::class, 'back'])->name('legumesBack');
+Route::get('/back/legumes/show{id}', [LegumesController::class, 'show'])->name('legumesShow');

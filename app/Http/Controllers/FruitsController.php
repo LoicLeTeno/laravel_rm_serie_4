@@ -19,6 +19,12 @@ class FruitsController extends Controller
         return view('pages.fruits', compact('fruits'));
     }
 
+    public function back()
+    {
+        $fruits = DB::select('SELECT * FROM fruits');
+        return view('pages.backOffice.fruits-back', compact('fruits'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -46,9 +52,10 @@ class FruitsController extends Controller
      * @param  \App\Models\Fruits  $fruits
      * @return \Illuminate\Http\Response
      */
-    public function show(Fruits $fruits)
+    public function show($id)
     {
-        //
+        $show = Fruits::find($id);
+        return view('backOffice.show.fruits-show', compact('show'));
     }
 
     /**

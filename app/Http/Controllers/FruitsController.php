@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Fruits;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FruitsController extends Controller
 {
@@ -14,7 +15,7 @@ class FruitsController extends Controller
      */
     public function index()
     {
-        $fruits = Fruits::all();
+        $fruits = DB::select('SELECT * FROM fruits');
         return view('pages.fruits', compact('fruits'));
     }
 

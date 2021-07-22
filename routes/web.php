@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FruitsController;
 use App\Http\Controllers\LegumesController;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*

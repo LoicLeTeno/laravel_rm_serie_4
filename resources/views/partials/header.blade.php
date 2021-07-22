@@ -10,12 +10,12 @@
         </div>
         <nav class="d-flex align-items-center">
             <ul class="d-flex align-items-center my-0">
-                <li class="nav-item d-flex align-items-center {{ request()->is('fruits') ? 'active' : '' }}">
-                    <a class="text-decoration-none text-white fs-5 mx-3" href="{{ route('fruits') }}">fruits</a>
+                <li class="nav-item d-flex align-items-center">
+                    <a class="text-decoration-none fs-5 mx-3 {{ request()->is('fruits') ? 'text-danger' : 'text-white ' }}" href="{{ route('fruits') }}">fruits</a>
                 </li>
 
-                <li class="nav-item d-flex align-items-center {{ request()->is('legumes') ? 'active' : '' }}">
-                    <a class="text-decoration-none text-white fs-5 mx-3" href="{{ route('legumes') }}">legumes</a>
+                <li class="nav-item d-flex align-items-center">
+                    <a class="text-decoration-none fs-5 mx-3 {{ request()->is('legumes') ? 'text-danger' : 'text-white ' }}" href="{{ route('legumes') }}">legumes</a>
                 </li>
             </ul>
         </nav>

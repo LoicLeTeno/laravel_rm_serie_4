@@ -14,7 +14,8 @@ class LegumesController extends Controller
      */
     public function index()
     {
-        return view('pages.legumes');
+        $legumes = Legumes::all();
+        return view('pages.legumes', compact('legumes'));
     }
 
     /**

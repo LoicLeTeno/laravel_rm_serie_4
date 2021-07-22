@@ -14,7 +14,8 @@ class FruitsController extends Controller
      */
     public function index()
     {
-        return view('pages.fruits');
+        $fruits = Fruits::all();
+        return view('pages.fruits', compact('fruits'));
     }
 
     /**

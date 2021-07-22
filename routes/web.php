@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\FruitsController;
 use App\Http\Controllers\LegumesController;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,14 +20,30 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pages.home');
 })->name('welcome');
+
+Route::get('/administration', function (Request $request) {
+    if ($request->login == null) {
+        return redirect('/');
+    }
+    if (str_contains($request->login, "@") == true) {
+        return redirect('/back');
+    }
+    if (str_contains($request->login, "@") == false) {
+        return redirect('/');
+    }
+});
+
+
 Route::get('/back', function () {
     return view('pages.backOffice.home-back');
 })->name('backOffice');
+
 
 // FRUITS
 Route::get('/fruits', [FruitsController::class, 'index'])->name('fruits');
 Route::get('/back/fruits', [FruitsController::class, 'back'])->name('fruitsBack');
 Route::get('/back/fruits/show/{id}', [FruitsController::class, 'show'])->name('fruitsShow');
+
 
 // LEGUMES
 Route::get('/legumes', [LegumesController::class, 'index'])->name('legumes');

@@ -58,9 +58,10 @@ class LegumesController extends Controller
      * @param  \App\Models\Legumes  $legumes
      * @return \Illuminate\Http\Response
      */
-    public function edit(Legumes $legumes)
+    public function edit($id) 
     {
-        //
+        $edit = Legumes::find($id);
+        return view('backOffice.edit.legumes-edit', compact('edit'));
     }
 
     /**
@@ -70,10 +71,15 @@ class LegumesController extends Controller
      * @param  \App\Models\Legumes  $legumes
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Legumes $legumes)
+    public function update(Request $request, $id)
     {
-        //
+        $update = Legumes::find($id);
+        $update->names = $request->names; 
+        $update->numbers = $request->numbers; 
+        $update -> save();
+        return redirect('/back/legumes/show/{id}');
     }
+
 
     /**
      * Remove the specified resource from storage.

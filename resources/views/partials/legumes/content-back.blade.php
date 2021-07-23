@@ -12,7 +12,7 @@
             @endforeach
         </ul>
 
-        @if (count($fruits) == 0)
+        @if (count($legumes) == 0)
             <h1>Il n'y a pas de légume en stock</h1>
         @endif
     </div>

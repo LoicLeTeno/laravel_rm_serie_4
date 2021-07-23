@@ -58,9 +58,10 @@ class FruitsController extends Controller
      * @param  \App\Models\Fruits  $fruits
      * @return \Illuminate\Http\Response
      */
-    public function edit(Fruits $fruits)
+    public function edit($id) 
     {
-        //
+        $edit = Fruits::find($id);
+        return view('backOffice.edit.fruits-edit', compact('edit'));
     }
 
     /**
@@ -70,9 +71,13 @@ class FruitsController extends Controller
      * @param  \App\Models\Fruits  $fruits
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Fruits $fruits)
+    public function update(Request $request, $id)
     {
-        //
+        $update = Fruits::find($id);
+        $update->names = $request->names; 
+        $update->numbers = $request->numbers; 
+        $update -> save();
+        return redirect('/back/fruits/show/'. $id);
     }
 
     /**

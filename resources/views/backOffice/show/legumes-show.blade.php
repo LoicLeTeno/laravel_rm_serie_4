@@ -30,6 +30,12 @@
                     <button class="btn btn-danger text-white" type="submit">Supprimer</button>
                 </form>
             </li>
+
+            <li class="text-decoration-none fw-bold d-flex justify-content-around align-items-center my-3">
+                <a href="/back/fruits/edit/{{ $show->id }}">
+                    <button class="btn btn-primary text-white" type="submit">Edit</button>
+                </a>
+            </li>
         </ul>
     </div>
 @endsection

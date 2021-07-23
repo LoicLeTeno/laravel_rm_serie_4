@@ -11,6 +11,10 @@
                 </li>
             @endforeach
         </ul>
+
+        @if (count($fruits) == 0)
+            <h1>Il n'y a pas de légume en stock</h1>
+        @endif
     </div>
 
     <div class="container w-25 bg-warning text-dark p-5 rounded-3">

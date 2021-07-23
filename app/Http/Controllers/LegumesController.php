@@ -81,8 +81,10 @@ class LegumesController extends Controller
      * @param  \App\Models\Legumes  $legumes
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Legumes $legumes)
+    public function destroy($id)
     {
-        //
+        $destroy = Legumes::find($id);
+        $destroy -> delete();
+        return redirect('/back/legumes');
     }
 }

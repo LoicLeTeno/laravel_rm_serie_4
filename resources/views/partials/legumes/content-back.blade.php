@@ -5,14 +5,16 @@
                 <li class="text-decoration-none fw-bold d-flex justify-content-around align-items-center my-3">
                     {{ $legume->id }}. {{ $legume->names }} / {{ $legume->numbers }}
 
-                    <a href="{{ route('legumesShow', $legume->id) }}">
+                    <a href="/back/legumes/show/{{ $legume->id }}">
                         <button class="btn btn-success text-light" type="submit">Show</button>
                     </a>
-
-
                 </li>
             @endforeach
         </ul>
+
+        @if (count($fruits) == 0)
+            <h1>Il n'y a pas de légume en stock</h1>
+        @endif
     </div>
 
     <div class="container w-25 bg-warning text-dark p-5 rounded-3">

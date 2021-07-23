@@ -81,8 +81,10 @@ class FruitsController extends Controller
      * @param  \App\Models\Fruits  $fruits
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Fruits $fruits)
+    public function destroy($id)
     {
-        //
+        $destroy = Fruits::find($id);
+        $destroy -> delete();
+        return redirect('/back/fruits');
     }
 }

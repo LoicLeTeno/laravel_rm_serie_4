@@ -22,6 +22,14 @@
             <li class="text-decoration-none fw-bold d-flex justify-content-around align-items-center my-3">
                 NUMBER: {{ $show->numbers }}
             </li>
+
+            <li class="text-decoration-none fw-bold d-flex justify-content-around align-items-center my-3">
+                <form action="/back/legumes/delete/{{ $show->id }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger text-white" type="submit">Supprimer</button>
+                </form>
+            </li>
         </ul>
     </div>
 @endsection

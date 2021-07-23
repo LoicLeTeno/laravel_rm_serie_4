@@ -11,11 +11,11 @@
         <nav class="d-flex align-items-center">
             <ul class="d-flex align-items-center my-0">
                 <li class="nav-item d-flex align-items-center">
-                    <a class="text-decoration-none fs-5 mx-3 {{ request()->is('fruits') ? 'text-danger' : 'text-white ' }}" href="{{ route('fruitsBack') }}">Back fruits</a>
+                    <a class="text-decoration-none fs-5 mx-3 {{ request()->is('back/fruits') ? 'text-danger' : 'text-white ' }}" href="{{ route('fruitsBack') }}">Back fruits</a>
                 </li>
 
                 <li class="nav-item d-flex align-items-center">
-                    <a class="text-decoration-none fs-5 mx-3 {{ request()->is('legumes') ? 'text-danger' : 'text-white ' }}" href="{{ route('legumesBack') }}">Back legumes</a>
+                    <a class="text-decoration-none fs-5 mx-3 {{ request()->is('back/legumes') ? 'text-danger' : 'text-white ' }}" href="{{ route('legumesBack') }}">Back legumes</a>
                 </li>
             </ul>
         </nav>

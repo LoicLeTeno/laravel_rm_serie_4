@@ -42,12 +42,15 @@ Route::get('/back', function () {
 // FRUITS
 Route::get('/fruits', [FruitsController::class, 'index'])->name('fruits');
 Route::get('/back/fruits', [FruitsController::class, 'back'])->name('fruitsBack');
-Route::post('/back/fruits/store', [FruitsController::class, 'store'])->name('fruitsStore');
 Route::get('/back/fruits/show/{id}', [FruitsController::class, 'show'])->name('fruitsShow');
+Route::post('/back/fruits/store', [FruitsController::class, 'store'])->name('fruitsStore');
+Route::delete('/back/fruits/delete/{id}', [FruitsController::class, 'destroy'])->name('fruitsDelete');
 
 
 // LEGUMES
 Route::get('/legumes', [LegumesController::class, 'index'])->name('legumes');
 Route::get('/back/legumes', [LegumesController::class, 'back'])->name('legumesBack');
+Route::get('/back/legumes/show/{id}', [LegumesController::class, 'show'])->name('legumesShow');
 Route::post('/back/legumes/store', [LegumesController::class, 'store'])->name('legumesStore');
-Route::get('/back/legumes/show{id}', [LegumesController::class, 'show'])->name('legumesShow');
+Route::delete('/back/legumes/delete/{id}', [LegumesController::class, 'destroy'])->name('legumesDelete');
+

@@ -26,16 +26,6 @@ class FruitsController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -43,7 +33,11 @@ class FruitsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $store = new Fruits;
+        $store->names = $request->names; 
+        $store->numbers = $request->numbers; 
+        $store -> save();
+        return redirect('/back/fruits');
     }
 
     /**

@@ -12,4 +12,20 @@
             @endforeach
         </ul>
     </div>
+
+    <div class="container w-25 bg-warning text-dark p-5 rounded-3">
+        <form action="{{ route('fruitsStore') }}" method="POST">
+            @csrf
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label text-white">Names</label>
+                <input type="text" class="form-control" name="names">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label text-white">Numbers</label>
+                <input type="text" class="form-control" name="numbers">
+            </div>
+            <button type="submit" class="btn bg-success text-white">Ajouter</button>
+        </form>
+    </div>
 </section>

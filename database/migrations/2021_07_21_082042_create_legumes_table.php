@@ -15,6 +15,8 @@ class CreateLegumesTable extends Migration
     {
         Schema::create('legumes', function (Blueprint $table) {
             $table->id();
+            $table->string('names');
+            $table->integer('numbers');
             $table->timestamps();
         });
     }
